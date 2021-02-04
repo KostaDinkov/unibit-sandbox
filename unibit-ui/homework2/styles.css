@@ -1,0 +1,21 @@
+.navigation span{
+  width:25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin-right:10px;
+}
+
+span.active{
+  background-color: dodgerblue;
+}
+#imgHolder {
+  width: 800px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.imgContainer{
+  text-align: center;
+}
