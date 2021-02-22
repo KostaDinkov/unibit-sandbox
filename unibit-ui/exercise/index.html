@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 16.feb.21</title>
+  </head>
+  <body>
+    <h1 id="demo"></h1>
+    <script>
+      var person = {
+        firstName: "John",
+        lastName: "Ivanov",
+        id: 5566,
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+
+      let demo = document.getElementById("demo");
+      demo.textContent = person.fullName();
+
+      let student = new Object();
+
+      student.FirstName = "Pesho";
+      student.LastName = "Georgiev";
+      student.Age = 21;
+      student.FullName = () => {
+        return this.firstName + " " + this.lastName;
+      };
+
+      function Teacher(firstName, lastName, age, id) {
+        this.fName = firstName;
+        this.lName = lastName;
+        this.age = age;
+        this.id = id;
+      }
+
+      class Person {
+        constructor(fName, lName, birthYear) {
+          this.FirstName = fName;
+          this.LastName = lName;
+          this.BirthYear = birthYear;
+        }
+
+        ToString() {
+          return this.FirstName + " " + this.LastName;
+        }
+      }
+      const me = new Person("Kosta", "Diknkov", "1234");
+
+      let teacher1 = new Teacher("Ivan", "Ivanov", 44, "abc44");
+      demo.innerHTML = teacher1.age;
+    </script>
+  </body>
+</html>
