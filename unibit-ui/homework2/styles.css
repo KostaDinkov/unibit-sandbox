@@ -1,3 +1,6 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .navigation span{
   width:25px;
   height: 25px;
@@ -17,5 +20,8 @@ span.active{
 }
 
 .imgContainer{
+  text-align: center;
+}
+footer{
   text-align: center;
 }

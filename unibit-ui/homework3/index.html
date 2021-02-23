@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" conte nt="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI | Homework 3</title>
+    <style>
+      body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .operations-container {
+        display: grid;
+        grid-template-columns: fit-content(40ch) 30ch fit-content(40ch) 5ch fit-content(40ch);
+        column-gap: 5px;
+      }
+      #result {
+      border: 1px solid rgb(118, 118, 118);
+      border-radius: 3px;
+      padding:0 10px 0;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>UI Homework 3</h3>
+      <h1>Javascript Common Operations</h1>
+      <hr>
+    </header>
+    
+    <p>
+      Enter numbers and select an operation from the dropdown, then press the
+      '=' button to see the result.
+    </p>
+    <div class="operations-container">
+      <label for="numberA">Enter first number</label>
+      <span>Select Operation</span>
+      <label for="numberB">Enter second number</label>
+      <div></div>
+      <span>Result</span>
+
+      <input id="firstValue" name="numberA" type="text" placeholder="0" />
+      <select name="operators" id="operators"></select>
+      <input id="secondValue" name="numberB" type="text" placeholder="0"/>
+      <button id="calculateBtn">=</button>
+      <div id="result"></div>
+      <div></div>
+      <div id="info"></div>
+    </div>
+    <footer>
+      <p><em>2021 Kosta Dinkov, Unibit, fac. No 46355z</em></p>
+    </footer>
+
+    <script>
+      const operations = {
+        add: {
+          name: "{+} Addition",
+          description: "Adds second number to first number.",
+          action: (a, b) => a + b,
+        },
+        substract: {
+          name: "{-} Substracttion",
+          description:
+            "Given two numbers, substract second number from first number.",
+          action: (a, b) => a - b,
+        },
+        multiply: {
+          name: "{*} Multiplication",
+          description: "Multiply first number by the second number.",
+          action: (a, b) => a * b,
+        },
+        divide: {
+          name: "{/} Division",
+          description:
+            "Given two numbers, divide the first number by the second number.",
+          action: (a, b) => (b === 0 ? "Division by zero" : a / b),
+        },
+        power: {
+          name: "{**} Exponentiation",
+          description: "Raise the first number to the second number power",
+          action: (a, b) => a ** b,
+        },
+        modulo: {
+          name: "{%} Modulo",
+          description:
+            "Given two numbers, calculate the remainder of the division of the first number by the second.",
+          action: (a, b) => a % b,
+        },
+        increment: {
+          name: "{++} Incrementation",
+          description: "Increments first number by 1",
+          action: (a, b) => a + 1,
+        },
+        decrement: {
+          name: "{--} Decrementation",
+          description: "Decrements a first number by 1",
+          action: (a, b) => a - 1,
+        },
+        equals: {
+          name: "{===} Equals",
+          description:
+            "Checks if the first value is equal to the second value, without doing type conversion first.",
+          action: (a, b) => a === b,
+        },
+        notEqual: {
+          name: "{!== Not Equal}",
+          description:
+            "Checks if the first value is not equal to the second value, without doing type conversion first.",
+          action: (a, b) => a !== b,
+        },
+        greaterThan: {
+          name: "{>} Greater than.",
+          description:
+            "Checks if the first value is greater than the second value.",
+          action: (a, b) => a > b,
+        },
+        greaterThanOrEqual: {
+          name: "{>=} Greater than or equal.",
+          description:
+            "Checks if the first value is greater than or equal to the second value",
+          action: (a, b) => a >= b,
+        },
+        lessThan: {
+          name: "{<} Less than.",
+          description:
+            "Checks if the first value is less than the second value",
+          action: (a, b) => a < b,
+        },
+        lessThanOrEqual: {
+          name: "{<=} Less than or equal.",
+          description:
+            "Checks if the first value is less than or equal to the second value",
+          action: (a, b) => a <= b,
+        },
+      };
+
+      const selectElement = document.getElementById("operators");
+      const resultElement = document.getElementById("result");
+      const infoElement = document.getElementById("info");
+      const calculateBtn = document.getElementById("calculateBtn");
+
+      // Populate the select element with options based on the operations object
+      for (var element in operations) {
+        const option = document.createElement("option");
+        option.value = element;
+        option.textContent = operations[element].name;
+        console.log(operations[element]);
+        selectElement.appendChild(option);
+      }
+
+      // On startup, set the info text to be the description for the currently selected option (operation)
+      infoElement.textContent = operations[selectElement.value].description;
+      selectElement.onchange = (e) => {
+        infoElement.textContent = operations[e.target.value].description;
+      };
+
+      // bind the button to an action
+      calculateBtn.onclick = onCalculateBrnClicked;
+
+      // when the button is clicked, the result is calculated
+      // based on the values of the 2 input fields and the selected option
+      function onCalculateBrnClicked() {
+        resultElement.textContent = calculate(
+          document.getElementById("firstValue").value,
+          document.getElementById("secondValue").value,
+          selectElement.value
+        );
+      }
+
+      /**
+       * Calculates the result for an operation given 2 operand values
+       * @param {string} firstValue - the first operand
+       * @param {string} secondValue - the secondoperand
+       * @param {string} operation - the name of the operation. Has to exist in the operations object
+       */
+      function calculate(firstValue, secondValue, operation) {
+        const firstNum = Number(firstValue);
+        const secondNum = Number(secondValue);
+
+        if (Number.isNaN(firstNum) || Number.isNaN(secondNum)) {
+          return "Please enter only valid nubmers";
+        }
+
+        if (operations.hasOwnProperty(operation)) {
+          return operations[operation].action(firstNum, secondNum);
+        } else {
+          return "Operation not recognized";
+        }
+      }
+    </script>
+  </body>
+</html>

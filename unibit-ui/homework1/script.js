@@ -66,7 +66,7 @@ colorButton.textContent = "Set Random Color To H3 headings"
 colorButton.id = "colorButton";
 colorButton.onclick = ()=> setRandomColor(document.querySelectorAll("section.headings h3"));
 colorButton.style.display = "none";
-document.body.appendChild(colorButton);
+document.getElementById("buttonContainer").appendChild(colorButton);
 
 
 
