@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI | Homework 4</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .selection {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        column-gap: 5px;
+        row-gap: 5px;
+      }
+      .options {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .option {
+        text-align: right;
+      }
+      #info {
+        grid-column: 1/-1;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        column-gap: 20px;
+      }
+      .database {
+        border-left: 1px solid gray;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>UI Homework 3</h3>
+      <h1>Car Database Frontend</h1>
+    </header>
+    <div class="content">
+      <section class="addNewCar">
+        <h2>Add New Car</h2>
+        <div class="selection">
+          <label for="make">Car Make</label>
+          <select name="make" id="make" required>
+            <option disabled selected value>-- select car make --</option>
+          </select>
+
+          <label for="model">Car Model</label>
+          <select name="model" id="model" required></select>
+
+          <label for="engineType">Engine Type</label>
+          <select name="engineType" id="engineType" required>
+            <option value="gas">Gasoline</option>
+            <option value="diesel">Diesel</option>
+          </select>
+
+          <label for="color">Car Color</label>
+          <input
+            type="text"
+            name="color"
+            id="color"
+            placeholder="Enter car color"
+            required
+          />
+
+          <label for="date">First registration</label>
+          <input required type="date" name="date" id="date" />
+          <span>Options:</span>
+          <div class="options">
+            <div class="option">
+              <label for="is4x4">4x4</label>
+              <input type="checkbox" id="is4x4" name="is4x4" />
+            </div>
+            <div class="option">
+              <label for="alarm">alarm</label>
+              <input type="checkbox" id="alarm" name="alarm" />
+            </div>
+            <div class="option">
+              <label for="airConditioner">air conditioner</label>
+              <input
+                type="checkbox"
+                id="airConditioner"
+                name="airConditioner"
+              />
+            </div>
+            <div class="option">
+              <label for="autopilot">autopilot</label>
+              <input type="checkbox" id="autopilot" name="autopilot" />
+            </div>
+            <div class="option">
+              <label for="stereo">stereo</label>
+              <input type="checkbox" id="stereo" name="stereo" />
+            </div>
+            <div class="option">
+              <label for="usb">usb</label>
+              <input type="checkbox" id="usb" name="usb" />
+            </div>
+          </div>
+          <label for="image">Aditional Information:</label><br />
+          <textarea name="info" id="info" rows="5"></textarea><br />
+        </div>
+        <button type="submit" id="addBtn">Add Car</button>
+      </section>
+      <section class="database">
+        <h2>Car Database</h2>
+        <p>List of cars added to the database:</p>
+      </section>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
