@@ -1,0 +1,45 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.tutorial {
+  width: 50%;
+}
+.resultBox {
+  border-color: rgb(118, 118, 118);
+  border-image: initial;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 0 5px 0;
+  appearance: textfield;
+  display: inline-block;
+  background-color: white;
+}
+.layout{
+  display:grid;
+  grid-template-areas: "header header"
+                       "aside content"
+                       "footer footer";
+}
+.header{
+  grid-area: header;
+  margin-left:20px;
+}
+.aside{
+  grid-area: aside;
+  margin-right:20px;
+  margin-left:20px;
+}
+.content{
+  grid-area:content;
+}
+.footer{
+  grid-area: footer;
+}
+
+.aside ul li{
+  list-style-type: none;
+}
+.aside ul,li{
+  padding:0;
+  margin:0;
+}

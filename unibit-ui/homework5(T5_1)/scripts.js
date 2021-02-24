@@ -23,4 +23,48 @@ strReplaceAllBtn.onclick = (e)=>{
   strReplaceAllResult.textContent = result;
 }
 
+// string trim
+const strTrimInput = document.getElementById('strTrimInput');
+const strTrimResult = document.getElementById('strTrimResult');
+const strTrimBtn = document.getElementById('strTrimBtn');
+
+strTrimBtn.onclick =(e)=>{ strTrimResult.textContent = strTrimInput.value.trim(); }
+
+// array filter
+
+const arrFilterInput = document.getElementById('arrFilterInput');
+const arrFilterResult = document.getElementById('arrFilterResult');
+const arrFilterBtn = document.getElementById('arrFilterBtn');
+
+arrFilterBtn.onclick = (e)=>{
+  arrFilterResult.textContent = arrFilterInput.value
+  .replaceAll(/\[|\]/gm,"")
+  .split(',')
+  .filter(x=> !Number.isNaN(Number(x)))
+  .join(", ");
+}
+
+//array map
+const arrMapInput =document.getElementById('arrMapInput');
+const arrMapResult =document.getElementById('arrMapResult');
+const arrMapBtn =document.getElementById('arrMapBtn');
+
+arrMapBtn.onclick=(e)=>{
+  arrMapResult.textContent = arrMapInput.value
+  .replaceAll(/\[|\]/gm,"")
+  .split(",").map(x=>x**2)
+  .join(", ");
+}
+
+//array find
+const arrFindInput =document.getElementById('arrFindInput');
+const arrFindResult =document.getElementById('arrFindResult');
+const arrFindBtn =document.getElementById('arrFindBtn');
+
+arrFindBtn.onclick = (e)=>{
+  arrFindResult.textContent = arrFindInput.value
+  .replaceAll(/\[|\]/gm,"")
+  .split(",").find(x=>x>5);
+  
+}
 

@@ -4,104 +4,203 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <title>UI | Homework 5</title>
-    <style>
-      body {
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-      }
-      .tutorial {
-        width: 50%;
-      }
-      .resultBox {
-        border-color: rgb(118, 118, 118);
-        border-image: initial;
-        border: 1px solid gray;
-        border-radius: 3px;
-        padding: 0 5px 0;
-        appearance: textfield;
-        display: inline-block;
-        background-color: white;
-      }
-    </style>
+   
   </head>
   <body>
-    <header>
+    <header class="header"> 
       <h3>UI Homework 5</h3>
       <h1>Strings & Arrays</h1>
     </header>
 
-    <section class="tutorial">
-      <h2>The String.prototype.split method.</h2>
-      <p>
-        The split() method divides a String into an ordered list of substrings,
-        puts these substrings into an array, and returns the array. The division
-        is done by searching for a pattern; where the pattern is provided as the
-        first parameter in the method's call.
-      </p>
-      <h3>Example</h3>
-      <label for="strSplitInput">Enter a string separated by ','</label>
-      <input
-        type="text"
-        name="strSplitInput"
-        id="strSplitInput"
-        value="1, 2, 3, 4"
-      /><br />
-      <span>Result</span>
-      <div class="resultBox" id="strSplitResult">result</div>
-    </section>
-    <hr />
-    <section class="tutorial">
-      <h2>The String.prototype.replaceAll method.</h2>
-      <p>
-        The replaceAll() method returns a new string with all matches of a
-        pattern replaced by a replacement. The pattern can be a string or a
-        RegExp, and the replacement can be a string or a function to be called
-        for each match. The original string is left unchanged.
-      </p>
-      <h3>Example</h3>
-      <label for="strReplaceAllInput1">Enter some text:</label><br />
-      <textarea
-        cols="70"
-        rows="3"
-        name="strReplaceAllInput1"
-        id="strReplaceAllInput1"
-      ></textarea
-      ><br />
+    <div class="layout">
+      <div class="aside">
+        <h3>Select a method:</h3>
+        <ul>
+          <li>String.prototype.split</li>
+          <li>String.prototype.replaceAll</li>
+          <li>String.prototype.trim</li>
+          <li>Array.prototype.filter</li>
+          <li>Array.prototype.map</li>
+          <li>Array.prototype.find</li>
+        </ul>
+      </div>
+      <div class="content">
+        <section class="tutorial">
+          <h2>The String.prototype.split method.</h2>
+          <p>
+            The split() method divides a String into an ordered list of
+            substrings, puts these substrings into an array, and returns the
+            array. The division is done by searching for a pattern; where the
+            pattern is provided as the first parameter in the method's call.
+          </p>
+          <h3>Example</h3>
+          <label for="strSplitInput">Enter a string separated by ','</label>
+          <input
+            type="text"
+            name="strSplitInput"
+            id="strSplitInput"
+            value="1, 2, 3, 4"
+          /><br />
+          <span>Result</span>
+          <div class="resultBox" id="strSplitResult">result</div>
+        </section>
 
-      <label for="strReplaceAllInput2">Replace</label>
-      <input type="text" name="strReplaceAllInput2" id="strReplaceAllInput2" placeholder="Old value"/>
+        <section class="tutorial">
+          <h2>The String.prototype.replaceAll method.</h2>
+          <p>
+            The replaceAll() method returns a new string with all matches of a
+            pattern replaced by a replacement. The pattern can be a string or a
+            RegExp, and the replacement can be a string or a function to be
+            called for each match. The original string is left unchanged.
+          </p>
+          <h3>Example</h3>
+          <label for="strReplaceAllInput1">Enter some text:</label><br />
+          <textarea
+            cols="70"
+            rows="3"
+            name="strReplaceAllInput1"
+            id="strReplaceAllInput1"
+          ></textarea
+          ><br />
 
-      <label for="strReplaceAllInput3">with</label>
-      <input type="text" name="strReplaceAllInput3" id="strReplaceAllInput3" placeholder="New value"/>
-      
-      <button id="strReplaceAllBtn">Replace</button>
-      <br />
-      <span>Result</span><br />
-      <div class="resultBox" id="strReplaceAllResult"></div>
-    </section>
-    <hr />
-    <section class="tutorial">
-      <h2>The String.prototype.trim.</h2>
-      <p>
-        The trim() method removes whitespace from both ends of a string.
-        Whitespace in this context is all the whitespace characters (space, tab,
-        no-break space, etc.) and all the line terminator characters (LF, CR,
-        etc.).
-      </p>
-      <h3>Example</h3>
-      <label for="strTrimInput">Enter a string with whitespace around(eg. "&emsp;My string&emsp;")</label>
-      <input
-        type="text"
-        name="strTrimInput"
-        id="strTrimInput"
-        
-      />
-      <button id="strTrimButton">Trim</button>
-      <br />
-      <span>Result</span>
-      <div class="resultBox" id="strTrimResult"></div>
-    </section>
+          <label for="strReplaceAllInput2">Replace</label>
+          <input
+            type="text"
+            name="strReplaceAllInput2"
+            id="strReplaceAllInput2"
+            placeholder="Old value"
+          />
 
+          <label for="strReplaceAllInput3">with</label>
+          <input
+            type="text"
+            name="strReplaceAllInput3"
+            id="strReplaceAllInput3"
+            placeholder="New value"
+          />
+
+          <button id="strReplaceAllBtn">Replace</button>
+          <br />
+          <span>Result</span><br />
+          <div class="resultBox" id="strReplaceAllResult"></div>
+        </section>
+        <hr />
+
+        <section class="tutorial">
+          <h2>The String.prototype.trim method.</h2>
+          <p>
+            The trim() method removes whitespace from both ends of a string.
+            Whitespace in this context is all the whitespace characters (space,
+            tab, no-break space, etc.) and all the line terminator characters
+            (LF, CR, etc.).
+          </p>
+          <h3>Example</h3>
+          <label for="strTrimInput"
+            >Enter a string with whitespace around(eg. "&emsp;My
+            string&emsp;")</label
+          >
+          <input type="text" name="strTrimInput" id="strTrimInput" />
+          <button id="strTrimBtn">Trim</button>
+          <br />
+          <span>Result</span>
+          <div class="resultBox" id="strTrimResult"></div>
+        </section>
+
+        <section class="tutorial">
+          <h2>The Array.prototype.filter method.</h2>
+          <p>
+            The filter() method creates a new array with all elements that pass
+            the test implemented by the provided function.
+          </p>
+          <h3>Example</h3>
+          <p>
+            In the example below, the array.filter() method will return a new
+            array, that contains only the elements that are numbers
+          </p>
+
+          <label for="arrFilterInput"
+            >Add some more numbers to the array and click the Filter button to
+            see the result.</label
+          ><br />
+          <input
+            style="width: 100%"
+            type="text"
+            name="arrFilterInput"
+            id="arrFilterInput"
+            value="[apple, 1, orange, grapes, lemon, banana, 3, 4.5, strawbery, raspbery]"
+          />
+
+          <button id="arrFilterBtn">Filter</button>
+          <br />
+          <span>Result</span>
+          <div class="resultBox" id="arrFilterResult"></div>
+        </section>
+
+        <section class="tutorial">
+          <h2>The Array.prototype.map method.</h2>
+          <p>
+            The map() method creates a new array populated with the results of
+            calling a provided function on every element in the calling array.
+          </p>
+          <h3>Example</h3>
+          <p>
+            In the example below, the array.map() method will return a new
+            array, where every element from the input array will be the raised
+            to the power of 2;
+          </p>
+
+          <label for="arrMapInput"
+            >Add some more numbers to the array and click the Map button to see
+            the result.</label
+          ><br />
+          <input
+            style="width: 100%"
+            type="text"
+            name="arrMapInput"
+            id="arrMapInput"
+            value="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10,]"
+          />
+
+          <button id="arrMapBtn">Map</button>
+          <br />
+          <span>Result</span>
+          <div class="resultBox" id="arrMapResult"></div>
+        </section>
+
+        <section class="tutorial">
+          <h2>The Array.prototype.find method.</h2>
+          <p>
+            The find() method returns the value of the first element in the
+            provided array that satisfies the provided testing function. If no
+            values satisfy the testing function, undefined is returned.
+          </p>
+          <h3>Example</h3>
+          <p>
+            In the example below, the array.find() method will return the first
+            value that is greater than 5
+          </p>
+
+          <label for="arrFindInput"
+            >Add or change the numbers in the array and click the Find button to
+            see the result.</label
+          ><br />
+          <input
+            style="width: 100%"
+            type="text"
+            name="arrFindInput"
+            id="arrFindInput"
+            value="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10,]"
+          />
+
+          <button id="arrFindBtn">Find</button>
+          <br />
+          <span>Result</span>
+          <div class="resultBox" id="arrFindResult"></div>
+        </section>
+      </div>
+    </div>
     <script src="scripts.js"></script>
   </body>
 </html>
