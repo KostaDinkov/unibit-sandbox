@@ -28,12 +28,17 @@
       }
       .content {
         display: grid;
-        grid-template-columns: max-content 1fr;
+        grid-template-columns: max-content max-content;
         column-gap: 20px;
       }
       .database {
         border-left: 1px solid gray;
         padding-left: 20px;
+      }
+      .carListingItem {
+        background-color: dimgray;
+        color: white;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -45,73 +50,216 @@
     <div class="content">
       <section class="addNewCar">
         <h2>Add New Car</h2>
-        <div class="selection">
-          <label for="make">Car Make</label>
-          <select name="make" id="make" required>
-            <option disabled selected value>-- select car make --</option>
-          </select>
+        <form action="" method="post" id="addCarForm">
+          <div class="selection">
+            <label for="make">Car Make</label>
+            <select name="make" id="make" required>
+              <option disabled selected value>-- select car make --</option>
+            </select>
+            <label for="model">Car Model</label>
+            <select name="model" id="model" required>
+              <option disabled selected value>-- select car make --</option>
+            </select>
+            <label for="engineType">Engine Type</label>
+            <select name="engineType" id="engineType" required>
+              <option value="gas">Gasoline</option>
+              <option value="diesel">Diesel</option>
+            </select>
+            <label for="color">Car Color</label>
+            <input
+              type="text"
+              name="color"
+              id="color"
+              placeholder="Enter car color"
+              required="required"
+            />
+            <label for="date">First registration</label>
+            <input
+              required
+              type="date"
+              name="date"
+              id="date"
+              required="required"
+            />
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" required />
 
-          <label for="model">Car Model</label>
-          <select name="model" id="model" required></select>
+            <span>Options:</span>
+            <div class="options">
+              <div class="option">
+                <label for="4x4">4x4</label>
+                <input type="checkbox" id="is4x4" name="4x4" />
+              </div>
+              <div class="option">
+                <label for="alarm">alarm</label>
+                <input type="checkbox" id="alarm" name="alarm" />
+              </div>
+              <div class="option">
+                <label for="airConditioner">air conditioner</label>
+                <input
+                  type="checkbox"
+                  id="airConditioner"
+                  name="airConditioner"
+                />
+              </div>
+              <div class="option">
+                <label for="autopilot">autopilot</label>
+                <input type="checkbox" id="autopilot" name="autopilot" />
+              </div>
+              <div class="option">
+                <label for="stereo">stereo</label>
+                <input type="checkbox" id="stereo" name="stereo" />
+              </div>
+              <div class="option">
+                <label for="usb">usb</label>
+                <input type="checkbox" id="usb" name="usb" />
+              </div>
+            </div>
 
-          <label for="engineType">Engine Type</label>
-          <select name="engineType" id="engineType" required>
-            <option value="gas">Gasoline</option>
-            <option value="diesel">Diesel</option>
-          </select>
-
-          <label for="color">Car Color</label>
-          <input
-            type="text"
-            name="color"
-            id="color"
-            placeholder="Enter car color"
-            required
-          />
-
-          <label for="date">First registration</label>
-          <input required type="date" name="date" id="date" />
-          <span>Options:</span>
-          <div class="options">
-            <div class="option">
-              <label for="is4x4">4x4</label>
-              <input type="checkbox" id="is4x4" name="is4x4" />
-            </div>
-            <div class="option">
-              <label for="alarm">alarm</label>
-              <input type="checkbox" id="alarm" name="alarm" />
-            </div>
-            <div class="option">
-              <label for="airConditioner">air conditioner</label>
-              <input
-                type="checkbox"
-                id="airConditioner"
-                name="airConditioner"
-              />
-            </div>
-            <div class="option">
-              <label for="autopilot">autopilot</label>
-              <input type="checkbox" id="autopilot" name="autopilot" />
-            </div>
-            <div class="option">
-              <label for="stereo">stereo</label>
-              <input type="checkbox" id="stereo" name="stereo" />
-            </div>
-            <div class="option">
-              <label for="usb">usb</label>
-              <input type="checkbox" id="usb" name="usb" />
-            </div>
+            <label for="info">Aditional Information:</label><br />
+            <textarea name="info" id="info" rows="5"></textarea><br />
           </div>
-          <label for="image">Aditional Information:</label><br />
-          <textarea name="info" id="info" rows="5"></textarea><br />
-        </div>
-        <button type="submit" id="addBtn">Add Car</button>
+          <button type="submit" id="addBtn">Add Car</button>
+          <button type="reset" id="resetBtn">Reset Form</button>
+        </form>
       </section>
       <section class="database">
         <h2>Car Database</h2>
         <p>List of cars added to the database:</p>
+        <div id="carsList"></div>
       </section>
     </div>
-    <script src="scripts.js"></script>
+    <script>
+      const cars = [
+        {
+          make: "Suzuki",
+          models: ["Vitara", "Jimny", "S-Cross", "Swift"],
+        },
+        {
+          make: "Toyota",
+          models: ["Land Cruiser", "Hilux", "Corolla", "Rav4", "Prius"],
+        },
+        {
+          make: "Volkswagen",
+          models: ["Golf", "Passat", "Tiguan", "Arteon", "Touareg"],
+        },
+      ];
+      // bind the html inputs to variables
+      const database = [];
+      const addBtn = document.getElementById("addBtn");
+      const engineSelect = document.getElementById("engineType");
+      const colorInput = document.getElementById("color");
+      const dateInput = document.getElementById("date");
+      const priceInput = document.getElementById("price");
+      const options = document.querySelectorAll(".option input");
+      const infoInput = document.getElementById("info");
+
+      // populate select elements
+      const makeSelect = document.getElementById("make");
+      cars.forEach((object) => {
+        const option = document.createElement("option");
+        option.value = object.make;
+        option.textContent = object.make;
+        makeSelect.appendChild(option);
+      });
+
+      // when a car make selection is made, update the car model dropdown
+      const modelSelect = document.getElementById("model");
+      makeSelect.onchange = (e) => {
+        const models = cars.filter((item) => item.make === e.target.value)[0]
+          .models;
+
+        // remove options from previous car makes
+        while (modelSelect.firstChild)
+          modelSelect.removeChild(modelSelect.firstChild);
+
+        models.forEach((model) => {
+          const option = document.createElement("option");
+          option.value = model;
+          option.textContent = model;
+          modelSelect.appendChild(option);
+        });
+      };
+
+      const Car = {
+        make: "",
+        model: "",
+        engineType: "",
+        color: "",
+        registered: "",
+        options: [],
+        info: "",
+        price: 0,
+      };
+
+      addBtn.addEventListener("click", onSubmit, false);
+
+      // read the form's data and add it to the database list
+      function onSubmit(evt) {
+        evt.preventDefault();
+
+        let form = document.getElementById("addCarForm");
+        let isValid = form.checkValidity();
+        form.reportValidity();
+
+        if (isValid) {
+          let car = Object.create(Car);
+          car.make = makeSelect.value;
+          car.model = modelSelect.value;
+          car.engineType = engineSelect.value;
+          car.color = colorInput.value;
+          car.registered = dateInput.value;
+          car.info = infoInput.value;
+          car.price = priceInput.value;
+          car.options = [];
+          options.forEach((option) => {
+            if (option.checked) {
+              car.options.push(option.name);
+            }
+          });
+          console.log(car);
+          database.push(car);
+          displayDb(database, "carsList");
+        }
+      }
+
+      /**
+       * Renders the a list of Car objects into a container element
+       * @param {Car[]} database
+       * @param {string} containerId
+       */
+      function displayDb(database, containerId) {
+        const listContainer = document.getElementById(containerId);
+        while (listContainer.firstChild)
+          listContainer.removeChild(listContainer.firstChild);
+        let itemNo = 1;
+        database.forEach((car) => {
+          let item = document.createElement("dl");
+          item.innerHTML = `
+      <dt class="carListingItem" >${itemNo} ${car.make}, ${car.model}</dt>
+      <dd><b>Price:</b> ${car.price}</dd>
+      <dd><b>Color:</b> ${car.color}</dd>
+      <dd><b>Registration date:</b> ${car.registered}</dd>
+      <dd><b>Options:</b> ${car.options}</dd>
+      <dd><b>Info:</b> ${car.info}</dd>
+      `;
+          listContainer.appendChild(item);
+          itemNo++;
+        });
+      }
+
+      //when the reset button is clicked, set the model select dropdown to a default value
+      const resetBtn = document.getElementById("resetBtn");
+      resetBtn.addEventListener("click", (e) => {
+        while (modelSelect.firstChild)
+          modelSelect.removeChild(modelSelect.firstChild);
+        let defaultOption = document.createElement("option");
+        defaultOption.setAttribute("selected", "selected");
+        defaultOption.setAttribute("disabled", "disabled");
+        defaultOption.setAttribute("value", "value");
+        defaultOption.textContent = "-- select car make --";
+        modelSelect.appendChild(defaultOption);
+      });
+    </script>
   </body>
 </html>
