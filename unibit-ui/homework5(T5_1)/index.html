@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI | Homework 5</title>
+    <style>
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .tutorial {
+        width: 50%;
+      }
+      .resultBox {
+        border-color: rgb(118, 118, 118);
+        border-image: initial;
+        border: 1px solid gray;
+        border-radius: 3px;
+        padding: 0 5px 0;
+        appearance: textfield;
+        display: inline-block;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>UI Homework 5</h3>
+      <h1>Strings & Arrays</h1>
+    </header>
+
+    <section class="tutorial">
+      <h2>The String.prototype.split method.</h2>
+      <p>
+        The split() method divides a String into an ordered list of substrings,
+        puts these substrings into an array, and returns the array. The division
+        is done by searching for a pattern; where the pattern is provided as the
+        first parameter in the method's call.
+      </p>
+      <h3>Example</h3>
+      <label for="strSplitInput">Enter a string separated by ','</label>
+      <input
+        type="text"
+        name="strSplitInput"
+        id="strSplitInput"
+        value="1, 2, 3, 4"
+      /><br />
+      <span>Result</span>
+      <div class="resultBox" id="strSplitResult">result</div>
+    </section>
+    <hr />
+    <section class="tutorial">
+      <h2>The String.prototype.replaceAll method.</h2>
+      <p>
+        The replaceAll() method returns a new string with all matches of a
+        pattern replaced by a replacement. The pattern can be a string or a
+        RegExp, and the replacement can be a string or a function to be called
+        for each match. The original string is left unchanged.
+      </p>
+      <h3>Example</h3>
+      <label for="strReplaceAllInput1">Enter some text:</label><br />
+      <textarea
+        cols="70"
+        rows="3"
+        name="strReplaceAllInput1"
+        id="strReplaceAllInput1"
+      ></textarea
+      ><br />
+
+      <label for="strReplaceAllInput2">Replace</label>
+      <input type="text" name="strReplaceAllInput2" id="strReplaceAllInput2" placeholder="Old value"/>
+
+      <label for="strReplaceAllInput3">with</label>
+      <input type="text" name="strReplaceAllInput3" id="strReplaceAllInput3" placeholder="New value"/>
+      
+      <button id="strReplaceAllBtn">Replace</button>
+      <br />
+      <span>Result</span><br />
+      <div class="resultBox" id="strReplaceAllResult"></div>
+    </section>
+    <hr />
+    <section class="tutorial">
+      <h2>The String.prototype.trim.</h2>
+      <p>
+        The trim() method removes whitespace from both ends of a string.
+        Whitespace in this context is all the whitespace characters (space, tab,
+        no-break space, etc.) and all the line terminator characters (LF, CR,
+        etc.).
+      </p>
+      <h3>Example</h3>
+      <label for="strTrimInput">Enter a string with whitespace around(eg. "&emsp;My string&emsp;")</label>
+      <input
+        type="text"
+        name="strTrimInput"
+        id="strTrimInput"
+        
+      />
+      <button id="strTrimButton">Trim</button>
+      <br />
+      <span>Result</span>
+      <div class="resultBox" id="strTrimResult"></div>
+    </section>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

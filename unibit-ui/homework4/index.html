@@ -44,7 +44,7 @@
   </head>
   <body>
     <header>
-      <h3>UI Homework 3</h3>
+      <h3>UI Homework 4</h3>
       <h1>Car Database Frontend</h1>
     </header>
     <div class="content">
@@ -240,7 +240,7 @@
       <dd><b>Price:</b> ${car.price}</dd>
       <dd><b>Color:</b> ${car.color}</dd>
       <dd><b>Registration date:</b> ${car.registered}</dd>
-      <dd><b>Options:</b> ${car.options}</dd>
+      <dd><b>Options:</b> ${car.options.join("; ")}</dd>
       <dd><b>Info:</b> ${car.info}</dd>
       `;
           listContainer.appendChild(item);
