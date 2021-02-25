@@ -1,8 +1,10 @@
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 0;
+  margin: 0;
 }
 .tutorial {
-  width: 50%;
+  
 }
 .resultBox {
   border-color: rgb(118, 118, 118);
@@ -14,32 +16,52 @@ body {
   display: inline-block;
   background-color: white;
 }
-.layout{
-  display:grid;
-  grid-template-areas: "header header"
-                       "aside content"
-                       "footer footer";
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "aside content"
+    "aside content"
+    "aside footer";
+  grid-template-columns: max-content 0.5fr;
 }
-.header{
+.header {
   grid-area: header;
-  margin-left:20px;
 }
-.aside{
+.aside {
   grid-area: aside;
-  margin-right:20px;
-  margin-left:20px;
+  margin-right: 20px;
+  /* margin-left:20px; */
+
+  color: white;
+  background-color: rgb(0, 52, 98);
 }
-.content{
-  grid-area:content;
+.content {
+  grid-area: content;
 }
-.footer{
+.footer {
   grid-area: footer;
 }
 
-.aside ul li{
+.aside ul li {
+  box-sizing: border-box;
   list-style-type: none;
+  padding: 10px 20px;
+  border-top: 1px solid rgb(0, 27, 51);
 }
-.aside ul,li{
-  padding:0;
-  margin:0;
+.aside ul li:last-child {
+  border-bottom: 1px solid rgb(0, 27, 51);
+}
+.aside ul li:hover {
+ 
+  background-color: rgb(33, 121, 197);
+  cursor: pointer;
+}
+
+.aside li,.aside h3,.aside h1 {
+  padding: 20px;
+  margin: 0;
+}
+.aside ul {
+  padding: 0;
 }

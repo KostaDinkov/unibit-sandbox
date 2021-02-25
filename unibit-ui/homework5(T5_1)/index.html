@@ -4,27 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="prism.css">
+    
     <title>UI | Homework 5</title>
-   
   </head>
-  <body>
-    <header class="header"> 
-      <h3>UI Homework 5</h3>
-      <h1>Strings & Arrays</h1>
-    </header>
-
+  <body class="line-numbers">
     <div class="layout">
       <div class="aside">
-        <h3>Select a method:</h3>
-        <ul>
-          <li>String.prototype.split</li>
-          <li>String.prototype.replaceAll</li>
-          <li>String.prototype.trim</li>
-          <li>Array.prototype.filter</li>
-          <li>Array.prototype.map</li>
-          <li>Array.prototype.find</li>
-        </ul>
+        <header>
+          <h3>UI Homework 5</h3>
+          <h1>Strings & Arrays</h1>
+        </header>
+        <div>
+          <h3>Select a method:</h3>
+          <ul>
+            <li>String.prototype.split</li>
+            <li>String.prototype.replaceAll</li>
+            <li>String.prototype.trim</li>
+            <li>Array.prototype.filter</li>
+            <li>Array.prototype.map</li>
+            <li>Array.prototype.find</li>
+          </ul>
+        </div>
       </div>
       <div class="content">
         <section class="tutorial">
@@ -36,15 +38,32 @@
             pattern is provided as the first parameter in the method's call.
           </p>
           <h3>Example</h3>
-          <label for="strSplitInput">Enter a string separated by ','</label>
+          <label for="strSplitInput">Enter a string separated by ','</label
+          ><br />
           <input
             type="text"
             name="strSplitInput"
             id="strSplitInput"
             value="1, 2, 3, 4"
-          /><br />
-          <span>Result</span>
+          />
+          <h4>Result</h4>
           <div class="resultBox" id="strSplitResult">result</div>
+          <h3>Code</h3>
+          <pre><code class="language-javascript">
+            const str = 'The quick brown fox jumps over the lazy dog.';
+
+            const words = str.split(' ');
+            console.log(words[3]);
+            // expected output: "fox"
+
+            const chars = str.split('');
+            console.log(chars[8]);
+            // expected output: "k"
+
+            const strCopy = str.split();
+            console.log(strCopy);
+            // expected output: Array ["The quick brown fox jumps over the lazy dog."]
+          </code></pre>
         </section>
 
         <section class="tutorial">
@@ -70,7 +89,7 @@
             type="text"
             name="strReplaceAllInput2"
             id="strReplaceAllInput2"
-            placeholder="Old value"
+            placeholder="Old"
           />
 
           <label for="strReplaceAllInput3">with</label>
@@ -78,15 +97,26 @@
             type="text"
             name="strReplaceAllInput3"
             id="strReplaceAllInput3"
-            placeholder="New value"
+            placeholder="New"
           />
-
           <button id="strReplaceAllBtn">Replace</button>
-          <br />
-          <span>Result</span><br />
+          
+          <h4>Result</h4>
           <div class="resultBox" id="strReplaceAllResult"></div>
+          <h3>Code</h3>
+          <pre><code class="language-javascript">
+            const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+            console.log(p.replaceAll('dog', 'monkey'));
+            // expected output: "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"
+
+
+            // global flag required when calling replaceAll with regex
+            const regex = /Dog/ig;
+            console.log(p.replaceAll(regex, 'ferret'));
+            // expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+          </code></pre>
         </section>
-        <hr />
 
         <section class="tutorial">
           <h2>The String.prototype.trim method.</h2>
@@ -100,12 +130,25 @@
           <label for="strTrimInput"
             >Enter a string with whitespace around(eg. "&emsp;My
             string&emsp;")</label
-          >
+          ><br />
           <input type="text" name="strTrimInput" id="strTrimInput" />
           <button id="strTrimBtn">Trim</button>
-          <br />
-          <span>Result</span>
+          
+          <h4>Result</h4>
           <div class="resultBox" id="strTrimResult"></div>
+
+          <h3>Code</h3>
+          <pre>
+            <code class="language-javascript">
+              const greeting = '   Hello world!   ';
+              
+              console.log(greeting);
+              // expected output: "   Hello world!   ";
+              
+              console.log(greeting.trim());
+              // expected output: "Hello world!";
+            </code>
+          </pre>
         </section>
 
         <section class="tutorial">
@@ -125,17 +168,28 @@
             see the result.</label
           ><br />
           <input
-            style="width: 100%"
             type="text"
             name="arrFilterInput"
             id="arrFilterInput"
             value="[apple, 1, orange, grapes, lemon, banana, 3, 4.5, strawbery, raspbery]"
           />
-
+          
           <button id="arrFilterBtn">Filter</button>
-          <br />
-          <span>Result</span>
+          
+          <h4>Result</h4>
           <div class="resultBox" id="arrFilterResult"></div>
+
+          <h3>Code</h3>
+          <pre>
+            <code class="language-javascript">
+              const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+              
+              const result = words.filter(word => word.length > 6);
+              
+              console.log(result);
+              // expected output: Array ["exuberant", "destruction", "present"]
+            </code>
+          </pre>
         </section>
 
         <section class="tutorial">
@@ -156,7 +210,6 @@
             the result.</label
           ><br />
           <input
-            style="width: 100%"
             type="text"
             name="arrMapInput"
             id="arrMapInput"
@@ -164,9 +217,19 @@
           />
 
           <button id="arrMapBtn">Map</button>
-          <br />
-          <span>Result</span>
+
+          <h4>Result</h4>
           <div class="resultBox" id="arrMapResult"></div>
+          <h3>Code</h3>
+          <pre class='language-javascript'>
+            <code class='language-javascript'>  
+              const array1 = [1, 2, 3, 4];
+
+              // pass a function to map
+              const map1 = array1.map(x => x ** 2);
+              // expected [1, 4, 9, 16]
+            </code>
+          </pre>
         </section>
 
         <section class="tutorial">
@@ -187,7 +250,6 @@
             see the result.</label
           ><br />
           <input
-            style="width: 100%"
             type="text"
             name="arrFindInput"
             id="arrFindInput"
@@ -195,12 +257,26 @@
           />
 
           <button id="arrFindBtn">Find</button>
-          <br />
-          <span>Result</span>
+          
+          <h4>Result</h4>
           <div class="resultBox" id="arrFindResult"></div>
+
+          <h3>Code</h3>
+          <pre>
+            <code class="language-javascript">
+              const array1 = [5, 12, 8, 130, 44];
+              
+              const found = array1.find(element => element > 10);
+              
+              console.log(found);
+              // expected output: 12
+            </code>
+          </pre>
         </section>
       </div>
     </div>
     <script src="scripts.js"></script>
+    <script src="prism.js"></script>
+    
   </body>
 </html>
