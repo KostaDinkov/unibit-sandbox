@@ -1,0 +1,67 @@
+/* RESET STYLES & HELPER CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --level-1: #8dccad;
+  --level-2: #f5cc7f;
+  --level-3: #7b9fe0;
+  --level-4: #f27c8d;
+  --black: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 50px 0 100px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns: max-content max-content;
+}
+
+.controls{
+  text-align: left;
+  margin-left:10px;
+}
+
+.controls button{
+  margin-bottom:10px;
+  padding:5px;
+}
+.l1,
+.l2,
+.l3 {
+  border: 1px solid black;
+}
+.l1 {
+  width:300px;
+  height: 500px;
+  background-color: var(--level-1);
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.l2 {
+  width: 200px;
+  height: 200px;
+  background-color: var(--level-2);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.l3 {
+  height: 50px;
+  width: 50px;
+  background-color: var(--level-3);
+}
