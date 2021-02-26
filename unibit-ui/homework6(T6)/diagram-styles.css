@@ -22,13 +22,14 @@ body {
 
 .layout{
   display:grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: max-content max-content max-content;
 }
 
-.controls{
+.controls, .result{
   text-align: left;
   margin-left:10px;
 }
+
 
 .controls button{
   margin-bottom:10px;
