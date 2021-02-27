@@ -1,0 +1,82 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background: #eef2f7;
+  text-align: center;
+}
+.layout {
+  display: inline-block;
+  text-align: left;
+}
+.formContainer {
+  background-color: white;
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.formTitle{
+  text-align: center;
+}
+
+form {
+  text-align: right;
+}
+input,
+select,
+button {
+  border-radius: 5px;
+
+  border: 1px solid gray;
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+#userForm {
+  display: grid;
+  grid-template-columns: max-content max-content;
+}
+
+#userForm * {
+  padding: 5px;
+  margin: 0 5px 10px 0;
+}
+
+button {
+  background-color: dodgerblue;
+  border-color: rgb(0, 75, 100);
+  font-weight: bold;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: rgb(4, 103, 202);
+}
+a:visited {
+  text-decoration: none;
+  color: rgb(4, 103, 202);
+}
+.info{
+  position:relative;
+  top: -400px;
+  left: 400px;
+  width:300px;
+  height:300px;
+  border:1px solid gray;
+  border-radius:5px;
+  background-color: darkseagreen;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  color:white;
+  padding:10px;
+  display:none;
+}
