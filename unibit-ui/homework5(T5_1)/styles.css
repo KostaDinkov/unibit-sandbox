@@ -63,3 +63,9 @@ body {
 .aside ul {
   padding: 0;
 }
+
+
+footer a{
+  color:aqua;
+  text-decoration: none;
+}

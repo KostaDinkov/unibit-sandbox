@@ -1,16 +1,16 @@
-body{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.navigation span{
-  width:25px;
+.navigation span {
+  width: 25px;
   height: 25px;
   display: inline-block;
   border-radius: 50%;
   background-color: #bbb;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
-span.active{
+span.active {
   background-color: dodgerblue;
 }
 #imgHolder {
@@ -19,9 +19,13 @@ span.active{
   object-fit: cover;
 }
 
-.imgContainer{
+.imgContainer {
   text-align: center;
 }
-footer{
+footer {
   text-align: center;
+}
+footer a {
+  color: rgb(4, 103, 202);
+  text-decoration: none;
 }

@@ -103,3 +103,7 @@ header{
 #infoBox{
   width: 300px;
 }
+footer a{
+  color:rgb(4, 103, 202);;
+  text-decoration: none;
+}
