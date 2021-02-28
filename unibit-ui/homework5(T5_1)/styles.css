@@ -51,12 +51,13 @@ body {
   border-bottom: 1px solid rgb(0, 27, 51);
 }
 .aside ul li:hover {
- 
   background-color: rgb(33, 121, 197);
   cursor: pointer;
 }
 
-.aside li,.aside h3,.aside h1 {
+.aside li,
+.aside h3,
+.aside h1 {
   padding: 20px;
   margin: 0;
 }
@@ -64,8 +65,7 @@ body {
   padding: 0;
 }
 
-
-footer a{
-  color:aqua;
+footer a {
+  color: aqua;
   text-decoration: none;
 }

@@ -232,7 +232,7 @@ const infos = {
 
 const buttons = document.querySelectorAll('.controls button');
 
-buttons.forEach(b=>b.addEventListener('click',(evt)=>{
-  let infoKey = evt.target.id.replace('Btn',"");
+buttons.forEach(b => b.addEventListener('click', (evt) => {
+  let infoKey = evt.target.id.replace('Btn', "");
   infoBox.textContent = infos[infoKey];
 }))

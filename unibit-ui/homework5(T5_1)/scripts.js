@@ -86,9 +86,9 @@ for (let index = 0; index < links.length; index++) {
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach(input => {
-  input.size = input.value.length+1;
+  input.size = input.value.length + 1;
   input.addEventListener("keyup", (e) => {
-    input.size = input.value.length+1;
+    input.size = input.value.length + 1;
   });
 });
 

@@ -7,8 +7,8 @@
 </head>
 <html>
   <style>
-    body{
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     }
     #container {
       width: 400px;
@@ -29,16 +29,15 @@
     #blueSquare {
       background-color: dodgerblue;
     }
-    footer a{
-  color:rgb(4, 103, 202);;
-  text-decoration: none;
-}
+    footer a {
+      color: rgb(4, 103, 202);
+      text-decoration: none;
+    }
   </style>
   <body>
     <header>
       <h3>UI Homework 7</h3>
       <h1>Red Yellow Blue</h1>
-
     </header>
     <p>
       <button id="startBtn">Click Me</button>
@@ -57,10 +56,10 @@
           >, Unibit, fac. No 46355z</em
         >
       </p>
-      </footer>
+    </footer>
     <script>
       const intervals = [];
-      
+
       const startBtn = document.getElementById("startBtn");
       startBtn.addEventListener("click", myMove);
       startBtn.addEventListener("click", moveBlue);
@@ -92,14 +91,14 @@
         function moveRight() {
           if (dx >= 175) {
             clearInterval(moveLeftInterval);
-            moveDownInterval = setInterval(moveDown,20);
+            moveDownInterval = setInterval(moveDown, 20);
             function moveDown() {
               if (dy >= 350) {
                 clearInterval(moveDownInterval);
                 return;
               }
               dy++;
-              blueSquare.style.top =  dy + "px";
+              blueSquare.style.top = dy + "px";
             }
             return;
           }

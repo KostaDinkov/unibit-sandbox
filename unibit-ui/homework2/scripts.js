@@ -1,6 +1,6 @@
 
 // Използвам масив от имена на изображения
-const photos = ["1.jpg","2.jpg","3.jpg", "4.jpg","5.jpg"];
+const photos = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
 const baseImgPath = "img/";
 
 // задаваме началното изображение да е нулевият индекс от масива
@@ -15,24 +15,24 @@ const nav = document.querySelector(".navigation");
 // на което задаваме onclik хендлъра да изпълнява функция, която сменя
 // текущото изображение, към което соки img елемента
 for (let i = 0; i < photos.length; i++) {
-  const circle = createDotNav(photos[i],imgElement);
+  const circle = createDotNav(photos[i], imgElement);
   // по подразбиране, първият елемент ще бъде с клас active
-  if(i==0)circle.setAttribute("class","active");
-  
+  if (i == 0) circle.setAttribute("class", "active");
+
   nav.appendChild(circle);
 }
 
-function createDotNav(url, imgElement){
+function createDotNav(url, imgElement) {
   const circle = document.createElement("span");
 
-  circle.onclick = (event)=>{
+  circle.onclick = (event) => {
     imgElement.src = baseImgPath + url;
     const circles = document.querySelectorAll(".navigation span");
     //премахваме "active" класа от другите кръгчета
-    circles.forEach(e=>{e.setAttribute("class","")})
-    
+    circles.forEach(e => { e.setAttribute("class", "") })
+
     //задаваме "active" клас на кръгчето, което сме "кликнали"
-    event.target.setAttribute("class","active");
+    event.target.setAttribute("class", "active");
   }
   return circle;
 }

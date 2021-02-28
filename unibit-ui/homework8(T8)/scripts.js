@@ -2,29 +2,29 @@ const userForm = document.getElementById('userForm');
 
 const inputs = document.querySelectorAll('input');
 inputs.forEach(i => i.addEventListener('keyup', (e) => {
-  if(e.key ==="Enter"){
+  if (e.key === "Enter") {
     userForm.reportValidity()
   }
-  
+
 }));
 
-document.getElementById('submitBtn').addEventListener('click',(evt)=>{
+document.getElementById('submitBtn').addEventListener('click', (evt) => {
   evt.preventDefault();
   let isValid = userForm.checkValidity();
   userForm.reportValidity();
 
-  if(isValid){
+  if (isValid) {
     displayPerson();
   }
-  else{
+  else {
     displayError();
   }
-  document.getElementById('textBtn').addEventListener('click',(evt)=>{
-    evt.target.parentNode.style.display= 'none';
+  document.getElementById('textBtn').addEventListener('click', (evt) => {
+    evt.target.parentNode.style.display = 'none';
   })
 })
 
-function displayPerson(){
+function displayPerson() {
 
   const info = setUpInfoBox()
 
@@ -41,14 +41,14 @@ function displayPerson(){
         </p>
         <span id='textBtn'>Затвори</span>
   `
-  info.style.backgroundColor="darkseagreen";
-  
+  info.style.backgroundColor = "darkseagreen";
+
   info.innerHTML = html;
   userForm.reset();
 }
 
-function displayError(){
-  const info= setUpInfoBox();
+function displayError() {
+  const info = setUpInfoBox();
   info.style.display = "block"
   let html = `
         <h2>Некоректни данни</h2>
@@ -65,18 +65,18 @@ function displayError(){
         </p>
         <span id='textBtn'>Затвори</span>
   `
-  info.style.backgroundColor="rgb(197, 75, 75)"
+  info.style.backgroundColor = "rgb(197, 75, 75)"
   info.innerHTML = html;
 }
 
-function setUpInfoBox(){
-  
+function setUpInfoBox() {
+
   const formCoords = userForm.getBoundingClientRect();
-  const info= document.getElementById('info');
-  
+  const info = document.getElementById('info');
+
   info.style.top = formCoords.top + "px";
   info.style.left = (formCoords.right + 30) + "px";
   info.style.display = "block";
-  
+
   return info;
 }
