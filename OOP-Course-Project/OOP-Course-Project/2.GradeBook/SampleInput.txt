@@ -1,0 +1,13 @@
+﻿add-course: 1, Cooking, 20, 30, Nanny Ogg
+add-course: 2, Thievery, 30, 30, Master Thief
+add-course: 3, Fighting, 10, 10, Fight Master
+add-course: 2, Horse Riding, 15, 15, Horse Rider
+add-student: Angua
+add-grade: Angua, Cooking, 3
+add-grade: Angua, Thievery, 5
+add-grade: Angua, Fighting, 4
+add-grade: Angua, Horse Riding, 6
+get-semester-stats: Angua
+get-grades: Angua
+add-grades-bulk: Ivan Petrov
+1, ОП, 25, 30, проф. И.Иванов, 6; 1, ЛААГ, 25, 30, проф. Г.Панайотова, 4; 1, ДМ, 25, 30, проф. Р.Павлов, 3; 2, ООП, 25, 30, проф. И.Иванов, 4; 3, КМК, 25, 30, В.Иванов, 5

@@ -1,0 +1,70 @@
+[
+  {
+    "Name": "add-student",
+    "Format": "add-student: {fullName}",
+    "Description": "Adds a new student to the school",
+    "Example": "add-student: Sam Vimes"
+  },
+  {
+    "Name": "add-grade",
+    "Format": "add-grade: {fullName}, {course}, {grade}",
+    "Description": "Adds a new course grade for the given student",
+    "Example": "add-grade: Sam Vimes, Law, 6"
+  },
+  {
+    "Name": "add-course",
+    "Format": "add-course: {semester No}, {name}, {lectures count}, {exercises count}",
+    "Description": "Adds a new course to the school for the given semester, with the count of the lectures and exercises.",
+    "Example": "add-course: 1, Law, 25, 30"
+  },
+  {
+    "Name": "get-grades",
+    "Format": "get-grades: {fullName}",
+    "Description": "Gets the grades for the specified student",
+    "Example": "get-grades: Sam Vimes"
+  },
+  {
+    "Name": "get-semester-stats",
+    "Format": "get-semester-stats: {fullName}",
+    "Description": "Gets the semester statistics for the given student",
+    "Example": "get-semester-stats: Sam Vimes"
+  },
+  {
+    "Name": "get-students",
+    "Format": "get-students",
+    "Description": "Gets a list of all students",
+    "Example": "get-students"
+  },
+  {
+    "Name": "add-grades-bulk",
+    "Format": "add-grades-bulk: {studentName}\n{semester}, {courseName}, {lecturesHours}, {exercisesHours}, {teacherName}, {grade}",
+    "Description": "This command adds grades to a student for multiple courses. If the student or a course does not exist, one will be created.",
+    "Example": "add-grades-bulk: Ivan Petrov\n1, OP, 25, 30, prof. I.Ivanov, 6; 1, LAAG, 25, 30, prof. G.Panayotova, 4; 1, DM, 25, 30, prof. R.Pavlov, 3; 2, OOP, 25, 30, prof. I.Ivanov, 4; 3, KMK, 25, 30, V.Ivanov, 5"
+  },
+  {
+    "Name": "exit",
+    "Format": "exit",
+    "Description": "Exits the program",
+    "Example": "exit"
+  },
+  {
+    "Name": "add-teacher",
+    "Format": "add-teacher: {teacherName}",
+    "Description": "Adds a teacher to the school",
+    "Example": "add-teacher: Leonhard Euler"
+  },
+  {
+    "Name": "get-teacher",
+    "Format": "get-teacher",
+    "Description": "Gets a list of all teachers in the school",
+    "Example": "get-teachers"
+  },
+  {
+    "Name": "add-teacher-to-course",
+    "Format": "add-teacher-to-course: {teacherName}, {courseName}",
+    "Description": "Adds a teacher to a course.",
+    "Example": "add-teacher-to-course: Euler, Math"
+  }
+
+
+]
