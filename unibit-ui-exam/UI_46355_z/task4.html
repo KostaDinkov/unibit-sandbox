@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <h1>Задача 4</h1>
+   <fieldset>
+        <legend>Registration form</legend>
+        <form id="frm">
+            First Name:<input id="txt1" type="text" value="" /><br /><br />
+            Second Name:<input id="txt2" type="text" value="" /><br /><br />
+            Male: <input type="radio" name="gender" value="Male" checked>
+            Female: <input type="radio" name="gender" value="Female" /> 
+            Undefined: <input type="radio" name="gender" value="Undefined" /> <br />
+
+            Education:  <input type="checkbox" name="edu" value="Bachalor">Bachalor
+            <input type="checkbox" name="edu" value="Magister">Magister<br>
+
+            <input id="btn1" type="button" value="Send Data" onclick="getDataAndShow()" />
+        </form>
+    </fieldset>
+    <p id="demo">Place for Data</p>
+
+    <script>
+        var a, b, c, d;
+        function Person(fname, lname, gen, edu) {
+            this.fName = fname;
+            this.lName = lname;
+            this.gender = gen;
+            this.education = edu;
+        }
+
+        function getDataAndShow() {
+            var form= document.getElementById('frm');
+            var a = form.elements[0].value;
+            var b = form.elements[1].value;
+            var c = genderFunction(form);
+            var d = education(form);
+            
+            var person1 = new Person(a, b, c, d);
+            showData(person1);
+        }
+
+        // education
+        function education(form) {
+            if (form.elements[5].checked && form.elements[6].checked) {
+                return x = form.elements[5].value + " & " + form.elements[6].value;
+                
+            } else if (form.elements[5].checked) {
+                return x = form.elements[5].value;
+            } else if (form.elements[6].checked) {
+                return x = form.elements[6].value;
+            } else {
+                return x = "No education";
+            }
+        }
+        //gender
+        function genderFunction(form) {
+
+            
+            if (form.elements[2].checked) {
+                return gen = form.elements[2].value;
+            } else if(form.elements[3].checked) {
+                return gen = form.elements[3].value;
+            } else{
+              return get= form.elements[4].value;
+            }
+            
+        } 
+
+        //****showData
+        function showData(person) {
+            var item;
+            var text = '';
+            for (item in person) {
+
+                text += person[item] + '<br/>';
+
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+
+    </script>
+
+ </body>
+</html> 

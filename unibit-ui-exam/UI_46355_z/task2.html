@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 2</title>
+</head>
+<body>
+  <h1>Задача 2</h1>
+  <h2>Products</h2>
+  <ol id = "products">
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Juice</li>
+  </ol>
+
+  <button type="button" onclick="changeBulletType()">Change Bullet Type</button>
+
+  <script>
+    const liElement = document.createElement("li");
+    liElement.innerHTML = "Cola";
+    const products = document.getElementById("products");
+    products.appendChild(liElement);
+
+    function changeBulletType(){
+      products.setAttribute("type","A")
+    }
+  </script>
+</body>
+</html>

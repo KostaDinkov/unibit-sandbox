@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 1</title>
+</head>
+<body>
+  <h1>Задача 1</h1>
+  <h1 id="hText" onmouseover="changeColor(event)" onmouseout="resetColor(event)">Добре дошли в УНИБИТ</h1>
+  <p id= "pText" onmouseover="increaseSize(event)" onmouseout="decreaseSize(event)">Днес имаме изпит по JavaScript</p>
+  <button  type=button onclick="swapText()">Размени Текста</button>
+
+  <script>
+    function swapText(){
+      const hText = document.getElementById("hText");
+      const pText = document.getElementById("pText");
+
+      let tmp = hText.innerHTML;
+      hText.innerHTML = pText.innerHTML;
+      pText.innerHTML = tmp;
+
+    }
+
+    function increaseSize(evt){
+      evt.target.style.fontSize = "30px";
+    }
+    function decreaseSize(evt){
+      evt.target.style.fontSize = "16px";
+    }
+
+    function changeColor(evt){
+      evt.target.style.color = "red";
+    }
+    function resetColor(evt){
+      evt.target.style.color = "black";
+    }
+  </script>
+</body>
+</html>

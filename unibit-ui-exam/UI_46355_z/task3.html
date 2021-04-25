@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача 3</title>
+</head>
+<body>
+  <h1>Задача 3</h1>
+  
+  <script>
+    const button = document.createElement("input");
+    
+    button.setAttribute("value","SendData");
+    button.setAttribute("type","button");
+    button.addEventListener("click",(event)=>{
+      
+      if(event.target.value === "SendData"){
+        event.target.value ="ClearData ";
+        return;
+      }
+      event.target.value = "SendData";
+      
+    })
+    document.body.appendChild(button);
+    
+  </script>
+</body>
+</html>
