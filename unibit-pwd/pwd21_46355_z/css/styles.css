@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+:root {
+  --accent-color: #ffca1a;
+  --blue-color:#52bad5;
+}
+html{
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background-color: white;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-style: normal;
+  font-weight: 200;
+  width: 100%;
+  height: 100%;
+  
+}
+
+header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  border-bottom: 1px solid var(--accent-color);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+.logo {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: undefined;
+  width: 10%;
+  float: left;
+  margin-top: 15px;
+  margin-left: 25px;
+  letter-spacing: 4px;
+}
+nav {
+  float: right;
+  width: 50%;
+  text-align: right;
+  margin-right: 25px;
+}
+header nav ul {
+  list-style: none;
+  float: right;
+}
+nav ul li {
+  float: left;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: left;
+  margin-right: 25px;
+  letter-spacing: 2px;
+
+  transition: all 0.3s linear;
+}
+ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+ul li:hover a {
+  color: #2c9ab7;
+}
+.centered_header{
+  color:var(--blue-color);
+  text-align: center;
+}
+.boxed_text {
+  color: rgb(6, 6, 6);
+  padding-left: 30px;
+  background-color: var(--accent-color);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(12, 11, 87, 1) 57%,
+    rgba(75, 123, 134, 1) 100%
+  );
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  perspective: 300px;
+}
+.parallax-group {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg {
+  transform: translateZ(-600px) scale(3);
+  z-index: 1;
+  background-image: url("../images/library.jpg");
+  filter: grayscale();
+  background-size: cover;
+}
+.bg_overlay {
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(17, 64, 75, 0.5) 40%,
+    rgba(102, 215, 250, 0.5) 100%
+  );
+
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+}
+.header_text {
+  transform: translateZ(-200px);
+  z-index: 3;
+}
+.hero_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  height: 0;
+  left: 50%;
+  margin-left: -475px;
+  top: 30%;
+}
+.content {
+  transform: translateZ(0px);
+  z-index: 300;
+}
+
+.hero_big_text {
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-size: 250px;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  letter-spacing: 10px;
+}
+
+.tagline {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  text-align: center;
+  font-size: 2.1em;
+  color: #ffffff;
+  margin-top: 5px;
+  font-weight: normal;
+  text-transform: uppercase;
+  top: -45px;
+}
+
+.card {
+  border-radius: 5px;
+  font-size: 1.2em;
+  background-color: #043745;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #e6e6e6;
+}
+.about {
+  display: grid;
+  padding-left: 2%;
+  padding-right: 2%;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2%;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.stats {
+  text-align: center;
+  padding-top:20px;
+  color: #717070;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+.gallery {
+  display: flex;
+}
+
+.thumbnail{
+  padding:20px;
+  
+}
+.gallery h1{
+  margin-top:0px;
+}
+.gallery .thumbnail h4 {
+
+  color: #52bad5;
+}
+.gallery .thumbnail p {
+  color: #a3a3a3;
+}
+
+.banner {
+  background-color: #2d9ab7;
+  background-image: url(../images/students.jpg);
+  height: 400px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.parallax {
+  color: #ffffff;
+  text-align: right;
+  letter-spacing: 2px;
+  margin-top: 0px;
+}
+.parallax_description {
+  color: #ffffff;
+  text-align: right;
+  font-weight: lighter;
+  line-height: 23px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.boxed {
+  width: 40%;
+  padding: 50px;
+  background-color: rgba(20, 93, 116, 0.6);
+}
+
+.testimonials{
+  background-color: white;
+  padding:20px;
+}
+.flex{
+  display:flex;
+  padding:5px;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+.review_card {
+  margin:5px;
+  display:grid;
+  grid-template-columns: auto 1fr;
+  border: 1px solid var(--blue-color);
+  background-color: white;
+  border-radius: 5px;
+  padding: 16px;
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+.review_card img {
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.review_card span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.button {
+  background-color: var(--accent-color);
+  width: 200px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #043745;
+  transition: all 0.3s linear;
+}
+.button:hover {
+  background-color: #fefefe;
+  color: var(--blue-color);
+  cursor: pointer;
+}
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: black;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  border-top-width: 2px;
+}
+.footer_banner {
+  background-color: #043745;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  margin-bottom: 0px;
+}
+
+.contacts{
+  color:white;
+  text-align: center;
+  line-height: 1.5em;
+}

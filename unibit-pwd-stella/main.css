@@ -1,0 +1,269 @@
+@font-face {
+  font-family: "LHFEncoreDistressed";
+  src: url("/fonts/LHFEncoreDistressed.otf");
+}
+@font-face {
+  font-family: "LHFEncoreHTR";
+  src: url("/fonts/LHFEncoreHTR.otf");
+}
+
+:root {
+  --heading-font: "LHFEncoreDistressed";
+  --title-font: "LHFEncoreHTR";
+  --main-font: "Roboto Slab";
+  --accent-color: rgb(255, 223, 41);
+  --bg-color: rgb(102, 233, 211);
+  --bg-color-dark: rgb(42, 69, 85);
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  
+}
+h1 {
+  font-size: 2em;
+  font-family: var(--heading-font);
+}
+
+p {
+  font-size: 1.2em;
+  font-family: var(--main-font);
+}
+
+a{
+  text-decoration: none;
+}
+a:visited{
+  color:inherit;
+}
+
+.layout {
+  width: 960px;
+
+  margin: auto;
+}
+
+.logo {
+  float: left;
+  padding: 16px;
+}
+
+header {
+  background-color: var(--bg-color);
+  font-size: 1.5em;
+  font-family: var(--heading-font);
+}
+
+header ul {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+header ul li {
+  margin-left: 16px;
+  float: left;
+  cursor: pointer;
+  padding: 16px;
+  transition: 0.3s;
+}
+header ul li:hover {
+  background-color: var(--bg-color-dark);
+  color: white;
+}
+/* Hero section */
+.hero {
+  width: 100%;
+  height: 600px;
+  background-image: url("/img/skimo.jpg");
+  background-size: cover;
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.hero__bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(15, 155, 172);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 155, 172, 0.4) 0%,
+    rgba(252, 153, 241, 0.4) 34%,
+    rgba(232, 231, 155, 0.6) 62%,
+    rgba(55, 245, 232, 0.4) 100%
+  );
+  z-index: 0;
+}
+.hero_text {
+  position: relative;
+  margin-left: 32px;
+  z-index: 1;
+  text-shadow: 1px 1px 3px black;
+  color: white;
+}
+
+.hero__big-text {
+  font-size: 10em;
+  font-family: var(--title-font);
+  line-height: 72px;
+}
+
+.hero__small-text {
+  font-family: var(--main-font);
+  margin-top: 16px;
+  font-size: 3.1em;
+}
+
+/* Info Section */
+
+.top_info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  margin-top: -64px;
+}
+
+.top_info__item {
+  width: 200px;
+  background-color: var(--bg-color);
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+/*About Us Section */
+.about {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "heading heading"
+    "text image";
+}
+.about__text {
+  grid-area: text;
+  padding-right: 16px;
+}
+
+.about__text p {
+  margin-block-start: 0;
+}
+.about__image {
+  grid-area: image;
+}
+.about__heading {
+  grid-area: heading;
+}
+#founder-image {
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+/* Gallery Section */
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery_thumb {
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* Contacts Section */
+
+.contacts {
+  padding: 32px;
+  padding-top: 16px;
+  margin-top: 32px;
+  border: 1px solid var(--bg-color-dark);
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+}
+.contacts form {
+  margin: auto;
+}
+.form__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 16px;
+}
+.contacts fieldset {
+  border: none;
+  padding: 0;
+}
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="button"] {
+  background-color: var(--accent-color);
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="button"]:hover {
+  background-color: var(--bg-color);
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  font-family: var(--main-font);
+  background-color: var(--bg-color-dark);
+  color: white;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.backdrop {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background: rgb(232,231,155);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(170, 255, 241, 0.8) 100%);
+  z-index: -1;
+  transform:translateY(-2500px);
+  height:2500px;
+}
+.backdrop-image{
+  background: url("/img/bg-pattern.jpg") repeat;
+  
+
+}
